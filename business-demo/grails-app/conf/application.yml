@@ -48,9 +48,9 @@ environments:
 ---
 ---
 grails:
-    profile: rest-api
+    profile: web
     codegen:
-        defaultPackage: user.ms
+        defaultPackage: business.demo
     spring:
         transactionManagement:
             proxies: false
@@ -63,7 +63,6 @@ spring:
     groovy:
         template:
             check-template-location: false
-
 # Spring Actuator Endpoints are Disabled by Default
 endpoints:
     enabled: false
@@ -95,6 +94,7 @@ grails:
               - application/json
               - text/json
             multipartForm: multipart/form-data
+            pdf: application/pdf
             rss: application/rss+xml
             text: text/plain
             hal:
@@ -110,4 +110,17 @@ grails:
         defaultScope: singleton
     converters:
         encoding: UTF-8
-
+    views:
+        default:
+            codec: html
+        gsp:
+            encoding: UTF-8
+            htmlcodec: xml
+            codecs:
+                expression: html
+                scriptlets: html
+                taglib: none
+                staticparts: none
+endpoints:
+    jmx:
+        unique-names: true
