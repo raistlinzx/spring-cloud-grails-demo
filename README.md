@@ -24,7 +24,7 @@
 - configserver
 
 	配置服务组件。作为基础服务，为其他组件提供可实时生效的配置文件更新服务。
-	配置文件基于Git，[Git地址](http://git.qiyestore.com/qiyestore/cloud-config-repo)
+	配置文件基于Git, `注：需修改对应Git服务配置`
 
 - discovery
 
@@ -45,7 +45,7 @@
 
 - Docker & Docker-Compose
 
-	具体安装方法请参照 [此链接](https://docs.docker.com/docker-for-windows/)
+	具体安装方法请参照 [此链接](https://docs.docker.com/)
 
 - Grails `3.1.10`
 
@@ -56,6 +56,19 @@
 | 注：编译最后可能`会报错`，`不用管它`
 
 编译 configserver
+
+修改配置 `configserver/src/main/resources/application.yml`
+```
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          # 这里修改为你的git服务地址，用户名及密码
+          uri: http://xxxxx/demo/cloud-config-repo.git
+          username: xxxx #你的用户名
+          password: xxxx #你的密码
+```
 
 ```bash
 cd configserver

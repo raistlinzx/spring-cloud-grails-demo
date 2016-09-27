@@ -24,6 +24,7 @@ spring:
     config:
       server:
         git:
-          uri: http://git.qiyestore.com/qiyestore/cloud-config-repo.git
-          username: robot
-          password: -1xEdto{k37X0fMbY?19zzoo|!{h9yb3
+          # 这里修改为你的git服务地址，用户名及密码
+          uri: http://xxxxx/demo/cloud-config-repo.git
+          username: xxxx #你的用户名
+          password: xxxx #你的密码
