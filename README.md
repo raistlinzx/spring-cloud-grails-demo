@@ -20,7 +20,7 @@
 	服务监控组件。为各个微服务提供监控状态服务，同时为微服务方法提供fallbackMethod
 
 
-## Demo编译及启动方法
+## 组件编译及启动方法
 
 ### 依赖包
 
@@ -86,3 +86,43 @@ docker-compose start
 cd docker
 docker-compose stop
 ```
+
+## Demo运行
+
+### 运行用户微服务 
+
+项目目录 `user-ms`。需要 Grails `3.1.10`
+
+运行命令：
+```bash
+grails run-app
+```
+
+成功运行以后，测试REST服务
+
+- 本地服务测试
+
+	- 正常测试 [http://localhost:8080/user/findUsers](http://localhost:8080/user/findUsers)
+
+	- failback测试 [http://localhost:8080/user/findUsersError](http://localhost:8080/user/findUsersError)
+
+- 测试apiproxy
+
+	- 正常测试 [http://localhost:8765/user/findUsers](http://localhost:8080/user/findUsers)
+
+	- failback测试 [http://localhost:8765/user/findUsersError](http://localhost:8080/user/findUsersError)
+
+
+### 运行业务DEMO 
+
+项目目录 `business-demo`。需要 Grails `3.1.10`
+
+运行命令：
+```bash
+grails run-app --port=8090
+```
+
+成功运行以后，使用RestBuilder远程访问服务测试
+
+[http://localhost:8090/demo](http://localhost:8090/demo)
+
