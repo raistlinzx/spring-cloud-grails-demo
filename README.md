@@ -1,5 +1,14 @@
 # Spring Cloud Demo - 微服务框架示例
 
+* [部分组件说明](#部分组件说明)
+* [组件编译及启动方法](#组件编译及启动方法)
+	* [依赖包](#依赖包)
+	* [服务组件编译](#服务组件编译)
+	* [服务组件启动方法](#服务组件启动方法)
+* [DEMO测试](#demo测试)
+	* [服务组件启动方法](#服务组件启动方法)
+	* [运行业务DEMO](#运行业务demo)
+
 ## 部分组件说明
 
 - configserver
@@ -87,7 +96,7 @@ cd docker
 docker-compose stop
 ```
 
-## Demo运行
+## DEMO测试
 
 ### 运行用户微服务 
 
@@ -113,7 +122,7 @@ grails run-app
 	- failback测试 [http://localhost:8765/user/findUsersError](http://localhost:8080/user/findUsersError)
 
 
-### 运行业务DEMO 
+### 运行业务DEMO
 
 项目目录 `business-demo`。需要 Grails `3.1.10`
 
