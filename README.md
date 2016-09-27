@@ -60,6 +60,7 @@ gradle buildDocker
 ```bash
 cd hystrix
 gradle buildDocker
+```
 
 ### 服务组件启动方法
 
