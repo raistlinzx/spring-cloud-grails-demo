@@ -1,5 +1,6 @@
 # Spring Cloud Demo - 微服务框架示例
 
+* [SpringCloud介绍](#springcloud介绍)
 * [部分组件说明](#部分组件说明)
 * [组件编译及启动方法](#组件编译及启动方法)
 	* [依赖包](#依赖包)
@@ -8,7 +9,15 @@
 * [DEMO测试](#demo测试)
 	* [服务组件启动方法](#服务组件启动方法)
 	* [运行业务DEMO](#运行业务demo)
+* [参考资料](#参考资料)
 * [待开发功能](#待开发功能)
+
+## SpringCloud介绍
+
+
+SpringCloudConfig图示
+
+![SpringCloudConfig图示](https://programmaticponderings.files.wordpress.com/2016/01/spring_cloud_config_2.png?w=1252)
 
 ## 部分组件说明
 
@@ -43,6 +52,8 @@
 - Gradle `3.0`
 
 ### 服务组件编译
+
+| 注：编译最后可能`会报错`，`不用管它`
 
 编译 configserver
 
@@ -136,9 +147,23 @@ grails run-app --port=8090
 
 [http://localhost:8090/demo](http://localhost:8090/demo)
 
+## 参考资料
+
+- SpringCloud官网 [http://projects.spring.io/spring-cloud/](http://projects.spring.io/spring-cloud/)
+- SpringCloud官方部分入门Demo
+	- Building Java Projects with Gradle [https://spring.io/guides/gs/gradle/](https://spring.io/guides/gs/gradle/)
+	- Building an Application with Spring Boot [https://spring.io/guides/gs/spring-boot/](https://spring.io/guides/gs/spring-boot/)
+	- Centralized Configuration [https://spring.io/guides/gs/centralized-configuration/](https://spring.io/guides/gs/centralized-configuration/)
+	- Service Registration and Discovery [https://spring.io/guides/gs/service-registration-and-discovery/](https://spring.io/guides/gs/service-registration-and-discovery/)
+	- Routing and Filtering [https://spring.io/guides/gs/routing-and-filtering/](https://spring.io/guides/gs/routing-and-filtering/)
+	- Client Side Load Balancing with Ribbon and Spring Cloud [https://spring.io/guides/gs/client-side-load-balancing/](https://spring.io/guides/gs/client-side-load-balancing/)
+- Building a Microservice Federation with Grails [http://www.slideshare.net/SpringCentral/building-a-microservice-federation-with-grails](http://www.slideshare.net/SpringCentral/building-a-microservice-federation-with-grails)
+- Microservice With Spring Boot and Spring Cloud [http://www.slideshare.net/ewolff/microservice-with-spring-boot-and-spring-cloud?qid=e812e95d-bd91-48b6-9648-0997feef2e53](http://www.slideshare.net/ewolff/microservice-with-spring-boot-and-spring-cloud?qid=e812e95d-bd91-48b6-9648-0997feef2e53)
+
+
 ## 待开发功能
 
-* 事件驱动型事务DEMO 
+- 事件驱动型事务DEMO 
 
 	基于消息中间件(如RabbitMQ,Kafka等)，实现分布式的消息驱动事务处理，例如：用户注册自动发优惠券，用户下单消费
 
