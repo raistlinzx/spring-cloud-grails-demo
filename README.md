@@ -14,9 +14,6 @@
 
 ## SpringCloud介绍
 
-
-![组件结构](http://s9.51cto.com/wyfs02/M02/6F/E0/wKioL1WslM_hp6dxAARTRTeCPuA417.png)
-
 ![SpringCloudConfig图示](https://programmaticponderings.files.wordpress.com/2016/01/spring_cloud_config_2.png?w=1252)
 
 ## 部分组件说明
