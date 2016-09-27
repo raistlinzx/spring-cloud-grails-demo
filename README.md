@@ -157,8 +157,9 @@ grails run-app --port=8090
 	- [Service Registration and Discovery](https://spring.io/guides/gs/service-registration-and-discovery/)
 	- [Routing and Filtering](https://spring.io/guides/gs/routing-and-filtering/)
 	- [Client Side Load Balancing with Ribbon and Spring Cloud](https://spring.io/guides/gs/client-side-load-balancing/)
-- [Building a Microservice Federation with Grails](http://www.slideshare.net/SpringCentral/building-a-microservice-federation-with-grails)
-- [Microservice With Spring Boot and Spring Cloud](http://www.slideshare.net/ewolff/microservice-with-spring-boot-and-spring-cloud?qid=e812e95d-bd91-48b6-9648-0997feef2e53)
+- 部分英文介绍&讲义
+	- [Building a Microservice Federation with Grails](http://www.slideshare.net/SpringCentral/building-a-microservice-federation-with-grails)
+	- [Microservice With Spring Boot and Spring Cloud](http://www.slideshare.net/ewolff/microservice-with-spring-boot-and-spring-cloud?qid=e812e95d-bd91-48b6-9648-0997feef2e53)
 
 
 ## 待开发功能
