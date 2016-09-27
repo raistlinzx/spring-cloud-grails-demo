@@ -1,0 +1,29 @@
+info:
+  component: API Proxy
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+zuul:
+  routes:
+    users:
+      path: /user/**
+      service-id: user-microservice
+      stripPrefix: false
+server:
+  port: 8765
+
+
+eureka:
+  instance:
+    hostname: apiproxy
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/

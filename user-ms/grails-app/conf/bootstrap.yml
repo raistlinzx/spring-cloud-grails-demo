@@ -1,0 +1,11 @@
+
+---
+spring:
+    # SpringCloud Eureka Regist Name
+    application:
+        name: user-microservice
+        
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_SERVER_URL:http://localhost:8761/eureka/}

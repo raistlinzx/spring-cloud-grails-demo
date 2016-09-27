@@ -1,0 +1,35 @@
+info:
+  component: Hystrx Dashboard
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+server:
+  port: 7979
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
+
+eureka:
+  client:
+    region: default
+    preferSameZone: false
+    us-east-1:
+      avaliabilityZones: default
+
+  instance:
+    virtualHostName: ${spring.application.name}
+
+# eureka:
+#   instance:
+#     hostname: localhost
+#   client:
+#     registerWithEureka: true
+#     fetchRegistry: true
+#     serviceUrl:
+#       defaultZone: http://eureka:8761/eureka/

@@ -1,0 +1,30 @@
+# management:
+#   context-path: /admin
+  
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    
+eureka:
+  instance:
+    # leaseRenewalIntervalInSeconds: 10
+    # statusPageUrlPath: /admin/info
+    # healthCheckUrlPath: /admin/health
+    hostname: configserver
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          # 这里修改为你的git服务地址，用户名及密码
+          uri: http://xxxxx/demo/cloud-config-repo.git
+          username: xxxx #你的用户名
+          password: xxxx #你的密码

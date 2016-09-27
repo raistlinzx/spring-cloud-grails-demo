@@ -1,0 +1,30 @@
+configserver:
+  image: configserver
+  ports: 
+    - 8888:8888
+discovery:
+  image: discovery
+  links:
+    - configserver
+  ports:
+    - 8761:8761
+  environment:
+    CONFIG_SERVER_URL: http://configserver:8888
+apiproxy:
+  image: apiproxy
+  links:
+    - discovery
+    - configserver
+  ports:
+    - 8765:8765
+  environment:
+    CONFIG_SERVER_URL: http://configserver:8888
+hystrix:
+  image: hystrix
+  links:
+    - discovery
+    - configserver
+  ports:
+    - 7979:7979
+  environment:
+    CONFIG_SERVER_URL: http://configserver:8888
