@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: discovery
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL:http://localhost:8888}
+      # # add this option, will cause an exception if startup with docker-compose
+      # failFast: true

@@ -1,0 +1,58 @@
+buildscript {
+    ext {
+        springBootVersion = '1.4.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'docker'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'hystrix'
+    version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Brixton.SR6'
+    }
+}
+
+
+
+dependencies {
+    compile('org.springframework.cloud:spring-cloud-starter-hystrix-dashboard')
+    compile('org.springframework.cloud:spring-cloud-starter-hystrix')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.cloud:spring-cloud-starter-eureka')
+    compile('org.springframework.cloud:spring-cloud-starter-config')
+    // testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+
+task buildDocker(type: Docker, dependsOn: build) {
+  push = true
+  applicationName = jar.baseName
+  dockerfile = file('src/main/docker/Dockerfile')
+  doFirst {
+    copy {
+      from jar
+      into stageDir
+    }
+  }
+}
