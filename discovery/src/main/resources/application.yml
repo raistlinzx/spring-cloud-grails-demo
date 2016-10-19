@@ -3,9 +3,23 @@ server:
 
 eureka:
   environment: default
+  instance:
+    # hostname: discovery
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 10
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0
     # enableSelfPreservation: false
+
+spring:
+  boot:
+    admin:
+      context-path: /spring-boot-admin
+      routes:
+        endpoints: env,metrics,trace,dump,jolokia,info,configprops,refresh,heapdump,hystrix.stream

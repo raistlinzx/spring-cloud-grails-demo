@@ -19,6 +19,7 @@ apiproxy:
     - 8765:8765
   environment:
     CONFIG_SERVER_URL: http://configserver:8888
+    DISCOVERY_SERVER_URL: http://discovery:8761
 hystrix:
   image: hystrix
   links:
@@ -28,3 +29,26 @@ hystrix:
     - 7979:7979
   environment:
     CONFIG_SERVER_URL: http://configserver:8888
+    DISCOVERY_SERVER_URL: http://discovery:8761
+rabbitmq:
+  image: rabbitmq:management
+  ports:
+    - 5672:5672
+    - 15672:15672
+
+# zookeeper:
+#   image: wurstmeister/zookeeper
+#   ports:
+#     - 2181:2181
+# kafka:
+#   image: wurstmeister/kafka
+#   ports:
+#     - 9092:9092
+#   links:
+#     - zookeeper
+#   environment:
+#     KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+#     KAFKA_ADVERTISED_HOST_NAME: localhost
+#     KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+#   volumes:
+#       - /var/run/docker.sock:/var/run/docker.sock
